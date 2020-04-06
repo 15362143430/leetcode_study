@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var addTwoNumbers = function(l1, l2) {
+				let shortlength = l2.length > l1.length ? l1.length : l2.length;
+				let longlength = l2.length > l1.length ? l2.length : l1.length;
+				let longArr = l2.length > l1.length ? l2 : l1;
+				let addArr = new Array(longlength + 1).fill(0);
+				for(let i = 0; i < longlength; i++) {
+					if(i < shortlength) {
+						sum = l1[i] + l2[i];
+						if(sum >= 10) {
+							addArr[i] += sum % 10;
+							addArr[i + 1] = 1;
+						} else {
+							addArr[i] += sum;
+						}
+					} else {
+						sum = longArr[i] + addArr[i];
+						if(sum >= 10) {
+							addArr = sum % 10;
+							addArr[i + 1] = 1;
+						} else {
+							addArr[i] = sum;
+						}
+					}
+				}
+				return addArr[addArr.length - 1] === 0 ? addArr.slice(0, addArr.length - 1) : addArr;
+			};
+
+			console.log(addTwoNumbers([2,4,3], [5,6,4]));
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

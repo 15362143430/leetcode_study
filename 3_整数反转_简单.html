@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var reverse = function(x) {
+				if(x === 0) return x;
+				let isAdd = x > 0 ? 1 : -1;
+				let numArr = (isAdd * x).toString().split('').map(Number);
+				let num = isAdd * Number(numArr.reverse().join(''));
+				return(num < Math.pow(-2, 31) || num > (Math.pow(2, 31) - 1)) ? 0 : num;
+			};
+			console.log(reverse(-72387182738200));
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

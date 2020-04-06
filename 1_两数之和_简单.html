@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var twoSum = function(nums, target) {
+				for(let i = 0; i < nums.length; i++) {
+					for(let j = i + 1; j < nums.length; j++) {
+						if(nums[i] + nums[j] === target) {
+							return [i, j];
+						}
+					}
+				}
+			};
+			console.log(twoSum([1,2,3],3))
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

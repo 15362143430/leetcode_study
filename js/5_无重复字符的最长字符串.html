@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//			失败
+			//			var lengthOfLongestSubstring = function(s) {
+			//				if(s === '') return 0;
+			//				let arr = [];
+			//				arr[0] = s[0];
+			//				let max = 1;
+			//				for(let i = 1; i < s.length; i++) {
+			//					console.log(arr);
+			//					if(arr.length > max ) {
+			//							max = arr.length;
+			//						}
+			//					if(arr.indexOf(s[i]) !== -1) {
+			//						arr = arr.slice(arr.lastIndexOf(s[i]) + 1);
+			//						//						console.log(arr)
+			//						arr.push(s[i])
+			//					} else {
+			//						arr.push(s[i]);
+			//						max = arr.length;
+			//					}
+			//				}
+			//				return max;
+			//			};
+			//			console.log(lengthOfLongestSubstring('auss'));
+
+			var lengthOfLongestSubstring = function(s) {
+				let len = 0; //最长长度
+				let subStr = '';//暂时字符串
+				let longStr = '';//最长字符串
+				for(let i = 0; i < s.length; i++) {
+					if(!subStr.includes(s[i])){
+						subStr += s[i];
+					}else{
+						subStr += s[i];
+						subStr = subStr.slice(subStr.indexOf(s[i])+1);
+					}
+					if(subStr.length > len){
+						len = subStr.length;
+						longStr = subStr;
+					}
+				}
+				return len;
+			};
+			console.log(lengthOfLongestSubstring('nfpdmpi'));
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>
