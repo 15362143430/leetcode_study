@@ -1,17 +1,19 @@
+// 给定一个大小为 n 的数组，找到其中的多数元素。多数元素是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。
+
+// 你可以假设数组是非空的，并且给定的数组总是存在多数元素。
+
+//  
+
+// 示例 1:
+
+// 输入: [3,2,3]
+// 输出: 3
+// 示例 2:
+
+// 输入: [2,2,1,1,1,2,2]
+// 输出: 2
+
 var majorityElement = function(nums) {
-    let count = Math.ceil(nums.length / 2);
-    let map = new Map();
-    for (let i = 0; i < nums.length; i++) {
-        let num = nums[i];
-        if (map.has(nums[i])) {
-            map.set(nums[i], 1)
-        } else {
-            let numCount = map.get(nums[i]);
-            map.set(nums[i], numCount++)
-        };
-        if (map.get(nums[i]) >= count) {
-            return nums[i];
-        }
-    }
+    nums.sort((a, b) => a - b)
+    return nums[Math.floor(nums.length / 2)]
 };
-console.log(majorityElement([3, 2, 3]))
